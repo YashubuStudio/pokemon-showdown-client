@@ -82,13 +82,19 @@ When you first open the page, the client may display a warning asking you to cop
 
 ## 8. Optional: test client login key
 
-For easier login while developing, create `config/testclient-key.js` in the client repository with:
+To skip the warning about copying text every time you open `testclient.html`, you can store your session ID in a small file.
 
-```javascript
-const POKEMON_SHOWDOWN_TESTCLIENT_KEY = 'sid';
-```
+1. **Login manually once.** When the browser asks you to paste text back in, do so and wait for the client to finish logging in.
+2. **Open your browser’s developer tools** (usually `F12` or right click > *Inspect*). Navigate to the Cookies section for your local server (for example `http://192.168.0.193:8058`).
+3. **Find the cookie named `sid`**. Copy its entire value.
+4. In this repository, create a new file `config/testclient-key.js` containing:
 
-Replace `'sid'` with the value of the `sid` cookie from your server after logging in once. This lets you refresh without re-entering login data.
+   ```javascript
+   const POKEMON_SHOWDOWN_TESTCLIENT_KEY = '<sid-value>'; // paste the sid value here
+   ```
+
+   Replace `<sid-value>` with the value you copied in step 3.
+5. Refresh the test client. If the value is correct, it will log you in automatically. If the manual prompt appears again, your key was not correct or has expired; repeat the steps to get a new `sid`.
 
 ## Summary
 
