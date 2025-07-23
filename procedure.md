@@ -67,13 +67,14 @@ npm install
 
 ## 7. Launch the test client
 
-Open `testclient.html` in your browser and append the host you started in step 5. For example:
+The test client is located in the `play.pokemonshowdown.com` folder after building.
+Open `play.pokemonshowdown.com/testclient.html` in your browser and append the host you started in step 5. For example:
 
 ```
-http://localhost:8080/testclient.html?~~localhost:8058
+http://localhost:8080/play.pokemonshowdown.com/testclient.html?~~localhost:8058
 ```
 
-If you are opening the file directly from disk, some browsers may escape the `?`. Running a small HTTP server such as `npx http-server` from the repository root can avoid this.
+If you are opening the file directly from disk, some browsers may escape the `?`. Running a small HTTP server (for example `npx http-server` from this repository) can avoid this.
 
 ## 8. Optional: test client login key
 
@@ -90,7 +91,7 @@ Replace `'sid'` with the value of the `sid` cookie from your server after loggin
 1. Clone and build the server.
 2. Set `config/config.json` to reference `localhost`.
 3. Start the server with `node pokemon-showdown`.
-4. Build this client and open `testclient.html` pointing to the local server.
+4. Build this client and open `play.pokemonshowdown.com/testclient.html` pointing to the local server.
 
 This setup allows you to test changes and run simulations locally without sending data to the public Pokémon Showdown servers.
 
