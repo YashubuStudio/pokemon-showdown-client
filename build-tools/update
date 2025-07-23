@@ -146,14 +146,19 @@ console.log(
 
 process.stdout.write("Updating cachebuster and URLs... ");
 
-const URL_REGEX = /(src=|href=|linkStyle\()"(.*?)(\?[a-z0-9]*?)?"/g;
+const URL_REGEX = /(srcset=|src=|href=|linkStyle\()"(.*?)(\?[a-z0-9]*?)?"/g;
 
 function addCachebuster(_, attr, url, urlQuery) {
 	url = url.replace('/replay.pokemonshowdown.com/', '/' + routes.replays + '/');
+	url = url.replace('//replay.pokemonshowdown.com/', '/' + routes.replays + '/');
 	url = url.replace('/dex.pokemonshowdown.com/', '/' + routes.dex + '/');
+	url = url.replace('//dex.pokemonshowdown.com/', '/' + routes.dex + '/');
 	url = url.replace('/play.pokemonshowdown.com/', '/' + routes.client + '/');
-	url = url.replace('/pokemonshowdown.com/', '/' + routes.root + '/');
+	url = url.replace('//play.pokemonshowdown.com/', '/' + routes.client + '/');
+	url = url.replace('/pokemonshowdown.com/', '/' + routes.root + (routes.root ? '/' : ''));
+	url = url.replace('//pokemonshowdown.com/', '/' + routes.root + (routes.root ? '/' : ''));
 	url = url.replace('/teams.pokemonshowdown.com/', '/' + routes.teams + '/');
+	url = url.replace('//teams.pokemonshowdown.com/', '/' + routes.teams + '/');
 
 	if (urlQuery) {
 		if (url.startsWith('/')) {
