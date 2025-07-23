@@ -96,7 +96,6 @@ To skip the warning about copying text every time you open `testclient.html`, yo
    Replace `<sid-value>` with the value you copied in step 3.
 5. Refresh the test client. If the value is correct, it will log you in automatically. If the manual prompt appears again, your key was not correct or has expired; repeat the steps to get a new `sid`.
 
-
 ## Summary
 
 1. Clone and build the server.
