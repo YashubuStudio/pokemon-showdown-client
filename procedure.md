@@ -57,12 +57,12 @@ By default it listens on port `8058`. If you changed the port in your configurat
 
 ## 6. Build this client
 
-From this repository (`pokemon-showdown-client`), build the client so that `testclient.html` can connect to your local server:
+From this repository (`pokemon-showdown-client`), build the client so that `testclient.html` can connect to your local server. Use the **full** build to pull in the server data files required by the test client:
 
 ```bash
 cd ../pokemon-showdown-client
 npm install
-./build
+./build full
 ```
 
 ## 7. Launch the test client
